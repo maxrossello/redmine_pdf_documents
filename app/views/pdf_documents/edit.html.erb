@@ -1,0 +1,15 @@
+<h2>Edit</h2>
+
+<%= render "form" %>
+
+<div class="splitcontentleft">
+	<div class="contextual">
+		<%= link_to "New", {:controller => :pdf_documents_wiki_pages, :action => :new, :project_id => @project, :pdf_document_id => @document}, :class => "icon icon-add" %>
+	</div>
+
+	<h3>Wiki Seiten</h3>
+	<% @wiki_pages = @document.pdf_documents_wiki_pages %>
+	<% @pdf_documents_document = @doc %>
+	<%= render "pdf_documents_wiki_pages/list" %>
+	
+</div>

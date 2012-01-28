@@ -1,0 +1,36 @@
+<div class="contextual">
+	<%= link_to "New", {:controller => :pdf_documents, :action => :new, :project_id => @project}, :class => "icon icon-add" %>
+</div>
+
+<h2>PDFs</h2>
+
+<div class="autoscroll">
+	<table class="list">
+		<thead>
+			<tr>
+				<th>#</th>
+				<th>Name</th>
+				<th>Erstellt</th>
+				<th>Autor</th>
+				<th>Titel</th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+			<% @documents.each do |doc| %>
+			<tr>
+				<td><%= doc.id %></td>
+				<td><%= doc.name %></td>
+				<td><%= doc.build_at %></td>
+				<td><%= doc.author %></td>
+				<td><%= doc.title %></td>
+				<td>
+					<%= link_to "Generate", {:controller => :pdf_documents, :action => :generate, :project_id => @project, :id => doc}, :class => "icon icon-file application-pdf" %>
+					<%= link_to "Edit", {:controller => :pdf_documents, :action => :edit, :project_id => @project, :id => doc}, :class => "icon icon-edit" %>
+					<%= link_to "Delete", {:controller => :pdf_documents, :action => :delete, :project_id => @project, :id => doc}, :class => "icon icon-del", :confirm => t(:text_are_you_sure) %>
+				</td>
+			</tr>
+			<% end %>
+		</tbody>
+	</table>
+</div>

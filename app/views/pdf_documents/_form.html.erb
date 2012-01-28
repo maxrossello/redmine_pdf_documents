@@ -1,0 +1,11 @@
+<div class="box">
+<% labelled_tabular_form_for :document, @document, :url => {:id => @document, :project_id => @project} do |f| %>
+	<%= error_messages_for :document %>
+	
+	<p><%= f.text_field :name, :size => 60, :required => true %></p>
+	<p><%= f.text_field :title, :size => 60, :required => true %></p>
+	<p><%= f.text_field :author, :size => 60, :required => true %></p>
+
+<div align=left><%= submit_tag l(:button_save) %></div>
+<% end %> 
+</div>
