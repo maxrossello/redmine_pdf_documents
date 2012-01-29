@@ -58,7 +58,7 @@ class PdfDocumentsController < ApplicationController
     pdf.SetFontStyle('',9)
     wiki_pages.each do |p|
       page = p.wiki_page
-      pdf.RDMwriteHTMLCell(190,5,0,0, page.content.text.to_s, page.attachments, "TLRB")
+      pdf.RDMwriteHTMLCell(190,5,0,0, page.content.text.to_s, page.attachments, 0)
       if page.attachments.any?
         pdf.Ln
         pdf.SetFontStyle('B',9)
