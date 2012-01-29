@@ -3,7 +3,6 @@
 		<thead>
 			<tr>
 				<th>Seite</th>
-				<th>Überschrift</th>
 				<th></th>
 			</tr>
 		</thead>
@@ -11,7 +10,6 @@
 			<% @wiki_pages.all.each do |page| %> 
 				<tr class="<%= cycle("odd", "even") %>">
 					<td><%= link_to page.wiki_page.title, {:controller => :pdf_documents_wiki_pages, :action => :edit, :project_id => @project, :pdf_document_id => @document, :id => page} %></td>
-					<td>TODO</td>
 					<td class="buttons">
 						<%= link_to t(:link_edit), {:controller => :pdf_documents_wiki_pages, :action => :edit, :project_id => @project, :pdf_document_id => @document, :id => page}, :class => "icon icon-edit" %>
 						<%= link_to t(:link_delete), {:controller => :pdf_documents_wiki_pages, :action => :delete, :project_id => @project, :pdf_document_id => @document, :id => page}, :class => "icon icon-del", :confirm => t(:text_are_you_sure) %>

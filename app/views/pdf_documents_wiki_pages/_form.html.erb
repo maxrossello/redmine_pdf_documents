@@ -2,7 +2,6 @@
 <% labelled_tabular_form_for :pdf_documents_wiki_page, @pdf_documents_wiki_page, :url => {:project_id => @project, :pdf_document_id => @document} do |f| %>
 
 	<p><%= f.select :wiki_page_id, options_from_collection_for_select(@project.wiki.pages, :id, :title, @pdf_documents_wiki_page.wiki_page_id), :required => true %></p>
-	<p>TODO: Überschrift</p>
 	
 <%= submit_tag l(:button_save) %>
 <% end %> 
