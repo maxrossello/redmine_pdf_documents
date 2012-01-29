@@ -48,10 +48,10 @@ class PdfDocumentsController < ApplicationController
     pdf = ITCPDF.new(current_language)
     pdf.SetTitle(@project.name)
     pdf.alias_nb_pages
-    pdf.footer_date = format_date(Date.today)
+    pdf.footer_date = format_date(Date.today) + " - " + @document.author
     pdf.AddPage
     pdf.SetFontStyle('B',11)
-    pdf.RDMMultiCell(190,5, @project.name)
+    pdf.RDMMultiCell(190,5, @document.title)
     pdf.Ln
     # Set resize image scale
     pdf.SetImageScale(1.6)
