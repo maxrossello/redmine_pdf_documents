@@ -17,7 +17,7 @@ class PdfDocumentsController < ApplicationController
       @document = PdfDocumentsDocument.create(params[:document])
       @document.build_at = Time.now
       if @document.save
-        flash[:notice] = "Dokument wurde angelegt"
+        flash[:notice] = t(:pdf_message_document_created)
         redirect_to :action => :edit, :project_id => @project, :id => @document
       end
     end
@@ -28,7 +28,7 @@ class PdfDocumentsController < ApplicationController
     if request.post?
       @document.build_at = Time.now
       if @document.update_attributes(params[:document])
-        flash[:notice] = "Dokument wurde aktualisiert"
+        flash[:notice] = t(:pdf_message_document_saved)
         redirect_to :action => :edit, :project_id => @project, :id => @document
       end
     end
@@ -37,7 +37,7 @@ class PdfDocumentsController < ApplicationController
   def delete
     @document = PdfDocumentsDocument.find(params[:id])
     if @document.destroy
-      flash[:notice] = "Dokument wurde gelöscht"
+      flash[:notice] = t(:pdf_message_document_deleted)
       redirect_to :action => :index, :project_id => @project
     end
   end

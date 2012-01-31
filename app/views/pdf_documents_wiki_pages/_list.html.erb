@@ -2,8 +2,8 @@
 	<table class="list">
 		<thead>
 			<tr>
-				<th>Seite</th>
-				<th><%=t :field_sort %></th>
+				<th><%=t :pdf_wiki_page %></th>
+				<th><%=t :pdf_wiki_sort %></th>
 				<th></th>
 			</tr>
 		</thead>
@@ -15,8 +15,8 @@
 						<%= reorder_links(:pdf_documents_wiki_page, {:controller => :pdf_documents_wiki_pages, :action => :edit_order, :project_id => @project, :pdf_document_id => @document, :id => page}) %>
 					</td>
 					<td class="buttons">
-						<%= link_to t(:link_edit), {:controller => :pdf_documents_wiki_pages, :action => :edit, :project_id => @project, :pdf_document_id => @document, :id => page}, :class => "icon icon-edit" %>
-						<%= link_to t(:link_delete), {:controller => :pdf_documents_wiki_pages, :action => :delete, :project_id => @project, :pdf_document_id => @document, :id => page}, :class => "icon icon-del", :confirm => t(:text_are_you_sure) %>
+						<%= link_to t(:pdf_button_edit), {:controller => :pdf_documents_wiki_pages, :action => :edit, :project_id => @project, :pdf_document_id => @document, :id => page}, :class => "icon icon-edit" %>
+						<%= link_to t(:pdf_button_delete), {:controller => :pdf_documents_wiki_pages, :action => :delete, :project_id => @project, :pdf_document_id => @document, :id => page}, :class => "icon icon-del", :confirm => t(:text_are_you_sure) %>
 					</td>
 				</tr>
 			<% end %>

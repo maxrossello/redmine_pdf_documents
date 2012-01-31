@@ -1,5 +1,5 @@
 <div class="contextual">
-	<%= link_to "New", {:controller => :pdf_documents, :action => :new, :project_id => @project}, :class => "icon icon-add" %>
+	<%= link_to t(:pdf_link_new_document), {:controller => :pdf_documents, :action => :new, :project_id => @project}, :class => "icon icon-add" %>
 </div>
 
 <h2>PDFs</h2>
@@ -9,10 +9,10 @@
 		<thead>
 			<tr>
 				<th align="left">#</th>
-				<th align="left">Name</th>
-				<th align="left">Erstellt</th>
-				<th align="left">Autor</th>
-				<th align="left">Titel</th>
+				<th align="left"><%= t :pdf_internal_name %></th>
+				<th align="left"><%= t :pdf_build_at %></th>
+				<th align="left"><%= t :pdf_author %></th>
+				<th align="left"><%= t :pdf_title %></th>
 				<th align="left"></th>
 			</tr>
 		</thead>
@@ -25,9 +25,9 @@
 				<td><%= doc.author %></td>
 				<td><%= doc.title %></td>
 				<td>
-					<%= link_to "Generate", {:controller => :pdf_documents, :action => :generate, :project_id => @project, :id => doc}, :class => "icon icon-file application-pdf" %>
-					<%= link_to "Edit", {:controller => :pdf_documents, :action => :edit, :project_id => @project, :id => doc}, :class => "icon icon-edit" %>
-					<%= link_to "Delete", {:controller => :pdf_documents, :action => :delete, :project_id => @project, :id => doc}, :class => "icon icon-del", :confirm => t(:text_are_you_sure) %>
+					<%= link_to t(:pdf_button_generate), {:controller => :pdf_documents, :action => :generate, :project_id => @project, :id => doc}, :class => "icon icon-file application-pdf" %>
+					<%= link_to t(:pdf_button_edit), {:controller => :pdf_documents, :action => :edit, :project_id => @project, :id => doc}, :class => "icon icon-edit" %>
+					<%= link_to t(:pdf_button_delete), {:controller => :pdf_documents, :action => :delete, :project_id => @project, :id => doc}, :class => "icon icon-del", :confirm => t(:text_are_you_sure) %>
 				</td>
 			</tr>
 			<% end %>

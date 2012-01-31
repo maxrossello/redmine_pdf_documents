@@ -13,7 +13,7 @@ class PdfDocumentsWikiPagesController < ApplicationController
     if request.post?
       @pdf_documents_wiki_page = @document.pdf_documents_wiki_pages.create(params[:pdf_documents_wiki_page])
       if @pdf_documents_wiki_page.save
-				flash[:notice] = t(:flash_page_saved)
+				flash[:notice] = t(:pdf_message_page_created)
 				redirect_to :controller => :pdf_documents, :action => :edit, :project_id => @project, :id => @document
 				return
 			end
@@ -25,7 +25,7 @@ class PdfDocumentsWikiPagesController < ApplicationController
     if request.post?
       @pdf_documents_wiki_page.update_attributes(params[:pdf_documents_wiki_page])
       if @pdf_documents_wiki_page.save
-        flash[:notice] = t(:flash_page_saved)
+        flash[:notice] = t(:pdf_message_page_saved)
 				redirect_to :controller => :pdf_documents, :action => :edit, :project_id => @project, :id => @document
 				return
       end
@@ -35,7 +35,7 @@ class PdfDocumentsWikiPagesController < ApplicationController
   def delete
     @pdf_documents_wiki_page = PdfDocumentsWikiPage.find(params[:id])
     if @pdf_documents_wiki_page.destroy
-      flash[:notice] = t(:flash_page_saved)
+      flash[:notice] = t(:pdf_message_page_deleted)
 			redirect_to :controller => :pdf_documents, :action => :edit, :project_id => @project, :id => @document
 			return
     end
