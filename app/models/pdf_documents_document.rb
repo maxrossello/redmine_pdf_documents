@@ -3,6 +3,6 @@ class PdfDocumentsDocument < ActiveRecord::Base
   
   belongs_to :user
 	belongs_to :project
-	has_many :pdf_documents_wiki_pages, :dependent => :destroy
+	has_many :pdf_documents_wiki_pages, :dependent => :destroy, :order => "wiki_page_order"
 	
 end

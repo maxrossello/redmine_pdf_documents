@@ -41,6 +41,21 @@ class PdfDocumentsWikiPagesController < ApplicationController
     end
   end
   
+  def edit_order
+    ordered_wikis = @document.pdf_documents_wiki_pages.all
+    wiki = PdfDocumentsWikiPage.find(params[:id])
+    move_to = params[:pdf_documents_wiki_page][:move_to]
+    ordered_wikis.delete(wiki)
+    case move_to
+      when "highest" then ordered_wikis.insert(0, wiki)
+			when "lowest" then ordered_wikis.insert(-1, wiki)
+			when "higher" then ordered_wikis.insert(wiki.wiki_page_order - 1, wiki)
+			when "lower" then ordered_wikis.insert(wiki.wiki_page_order + 1, wiki)
+    end
+    reorder_pages(ordered_wikis)
+    redirect_to :controller => :pdf_documents, :action => :edit, :project_id => @project, :id => @document
+  end
+  
   private
   
   def find_document
@@ -50,5 +65,18 @@ class PdfDocumentsWikiPagesController < ApplicationController
 	def find_project
 		@project = Project.find(params[:project_id])
 	end
+	
+	def reorder_pages(ordered_pages)
+		idx = 0
+		ordered_pages.each do |page|
+			unless page.nil?
+				page.wiki_page_order = idx
+				page.save
+				idx += 1
+			end
+		end
+	end
+	
+	
   
 end
