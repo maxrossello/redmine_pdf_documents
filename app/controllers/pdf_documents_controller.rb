@@ -49,15 +49,15 @@ class PdfDocumentsController < ApplicationController
     pdf.SetTitle(@project.name)
     pdf.alias_nb_pages
     pdf.footer_date = format_date(Date.today) + " - " + @document.author
-    pdf.AddPage
-    pdf.SetFontStyle('B',11)
-    pdf.RDMMultiCell(190,5, @document.title)
-    pdf.Ln
-    # Set resize image scale
-    pdf.SetImageScale(1.6)
-    pdf.SetFontStyle('',9)
     wiki_pages.each do |p|
       page = p.wiki_page
+      pdf.AddPage
+      pdf.SetFontStyle('B',11)
+      pdf.RDMMultiCell(190,5, @document.title)
+      pdf.Ln
+      # Set resize image scale
+      pdf.SetImageScale(1.6)
+      pdf.SetFontStyle('',9)
       pdf.RDMwriteHTMLCell(190,5,0,0, page.content.text.to_s, page.attachments, 0)
       if page.attachments.any?
         pdf.Ln
