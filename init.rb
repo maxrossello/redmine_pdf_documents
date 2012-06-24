@@ -17,6 +17,6 @@ Redmine::Plugin.register :redmine_pdf_documents do
 	end
 
 	# Menüeintrag
-	menu :project_menu, :pdf_documents_menu, {:controller => "pdf_documents", :action => "index"}, :caption => :pdf_tab, :after => :wiki, :param => :project_id
+	menu :project_menu, :pdf_documents, {:controller => "pdf_documents", :action => "index"}, :caption => "PDF Export", :after => :wiki, :param => :project_id
 
 end
