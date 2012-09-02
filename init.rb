@@ -5,7 +5,7 @@ Redmine::Plugin.register :redmine_pdf_documents do
   author 'Klaus Meyer'
   description 'Erzeugung von PDF Dokumenten aus mehreren Wiki Seiten'
   version '0.0.1'
-  url 'https://github.com/klausmeyer/Redmine-PDF-Documents'
+  url 'https://github.com/klausmeyer/redmine_pdf_documents_documents'
   author_url 'http://www.klaus-meyer.net'
 
 	# Redmine Version
