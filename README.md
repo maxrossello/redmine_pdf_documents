@@ -44,14 +44,14 @@ A document with selected wiki pages.
 
 [![Screenshot 05][screenshot_05_thumb]][screenshot_05_full]
 
-[screenshot_01_thumb]: https://raw.github.com/klausmeyer/Redmine-PDF-Documents/master/_screenshots/thumbs/01_overview.png
-[screenshot_02_thumb]: https://raw.github.com/klausmeyer/Redmine-PDF-Documents/master/_screenshots/thumbs/02_new_document.png
-[screenshot_03_thumb]: https://raw.github.com/klausmeyer/Redmine-PDF-Documents/master/_screenshots/thumbs/03_edit_document.png
-[screenshot_04_thumb]: https://raw.github.com/klausmeyer/Redmine-PDF-Documents/master/_screenshots/thumbs/04_add_wiki_page.png
-[screenshot_05_thumb]: https://raw.github.com/klausmeyer/Redmine-PDF-Documents/master/_screenshots/thumbs/05_document_wiki_pages.png
+[screenshot_01_thumb]: https://raw.github.com/klausmeyer/redmine_pdf_documents/master/_screenshots/thumbs/01_overview.png
+[screenshot_02_thumb]: https://raw.github.com/klausmeyer/redmine_pdf_documents/master/_screenshots/thumbs/02_new_document.png
+[screenshot_03_thumb]: https://raw.github.com/klausmeyer/redmine_pdf_documents/master/_screenshots/thumbs/03_edit_document.png
+[screenshot_04_thumb]: https://raw.github.com/klausmeyer/redmine_pdf_documents/master/_screenshots/thumbs/04_add_wiki_page.png
+[screenshot_05_thumb]: https://raw.github.com/klausmeyer/redmine_pdf_documents/master/_screenshots/thumbs/05_document_wiki_pages.png
 
-[screenshot_01_full]: https://raw.github.com/klausmeyer/Redmine-PDF-Documents/master/_screenshots/full/01_overview.png
-[screenshot_02_full]: https://raw.github.com/klausmeyer/Redmine-PDF-Documents/master/_screenshots/full/02_new_document.png
-[screenshot_03_full]: https://raw.github.com/klausmeyer/Redmine-PDF-Documents/master/_screenshots/full/03_edit_document.png
-[screenshot_04_full]: https://raw.github.com/klausmeyer/Redmine-PDF-Documents/master/_screenshots/full/04_add_wiki_page.png
-[screenshot_05_full]: https://raw.github.com/klausmeyer/Redmine-PDF-Documents/master/_screenshots/full/05_document_wiki_pages.png
+[screenshot_01_full]: https://raw.github.com/klausmeyer/redmine_pdf_documents/master/_screenshots/full/01_overview.png
+[screenshot_02_full]: https://raw.github.com/klausmeyer/redmine_pdf_documents/master/_screenshots/full/02_new_document.png
+[screenshot_03_full]: https://raw.github.com/klausmeyer/redmine_pdf_documents/master/_screenshots/full/03_edit_document.png
+[screenshot_04_full]: https://raw.github.com/klausmeyer/redmine_pdf_documents/master/_screenshots/full/04_add_wiki_page.png
+[screenshot_05_full]: https://raw.github.com/klausmeyer/redmine_pdf_documents/master/_screenshots/full/05_document_wiki_pages.png
