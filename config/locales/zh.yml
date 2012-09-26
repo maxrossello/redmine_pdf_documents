@@ -1,0 +1,29 @@
+# Simplified Chinese strings go here for Rails i18n
+# Author: Steven.W
+# Based on file: en.yml
+
+zh:
+  pdf_tab: "PDFs"
+  pdf_internal_name: "Internal name"
+  pdf_build_at: "Build at"
+  pdf_author: "作者"
+  pdf_title: "标题"
+  pdf_link_new_document: "添加文档"
+  pdf_button_generate: "生成"
+  pdf_button_edit: "编辑"
+  pdf_button_delete: "删除"
+  pdf_headline_edit: "编辑文档"
+  pdf_headline_new: "创建文档"
+  pdf_headline_wikipages: "WIKI页"
+  pdf_wiki_page: "页"
+  pdf_wiki_sort: "排序"
+  pdf_link_new_page: "添加页"
+  pdf_message_document_created: "文档已创建！"
+  pdf_message_document_saved: "文档已保存！"
+  pdf_message_document_deleted: "文档已删除！"
+  field_wiki_page: "WIKI页"
+  pdf_message_page_created: "PDF页已添加！"
+  pdf_message_page_saved: "PDF页已保存！"
+  pdf_message_page_deleted: "PDF页已删除！"
+  pdf_headline_edit_page: "编辑页"
+  pdf_headline_new_page: "创建页"
