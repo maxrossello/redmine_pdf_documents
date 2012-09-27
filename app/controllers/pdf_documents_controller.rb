@@ -25,7 +25,7 @@ class PdfDocumentsController < ApplicationController
   
   def edit
     @document = PdfDocumentsDocument.find(params[:id])
-    if request.post?
+    if params.include?(:document)
       @document.build_at = Time.now
       if @document.update_attributes(params[:document])
         flash[:notice] = t(:pdf_message_document_saved)
