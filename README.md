@@ -4,12 +4,13 @@
 
 This plugin creates pdf documents containing selected wiki pages.
 
-This project is currently work in progress and I am planing an complete rewrite after I've finished all the features I wan't to include.
+Redmine 2.x branch includes full rendering of macros, both in multiple-page documents and in wiki PDF exports.
+Supports wiki_external_filter (except for svg outputs) and all other plugins whose implemented macros generate html.
 
 ## Compatibility
 
-The plugin has been developed for Redmine Version 1.3.x and patched to work in Redmine 1.4.x to.
-I don't run any Redmine 2.x installation so perhaps I would port it to Redmine 2.0 if I have one.
+Tested on Redmine 2.3.
+Should work on Redmine 2.0+.
 
 ## License
 
@@ -20,7 +21,7 @@ This script is published under the GPLv2 licence.
 I am using code and ideas from the following people:
 
 * Code to create PDF from wiki pages: http://www.redmine.org/issues/401
-* Idea and portions of code form: http://www.redmine.org/plugins/redmine_doc_pu
+* Idea and portions of code from: http://www.redmine.org/plugins/redmine_doc_pu
 
 ## Screenshots
 
