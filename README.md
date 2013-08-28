@@ -11,7 +11,12 @@ Supports wiki_external_filter (except for svg outputs) and all other plugins who
 
 Tested on Redmine 2.3.
 Should work on Redmine 2.0+.
-Needs wkhtmltopdf 0.11.0 rc1 installed (wkhtmltopdf-binary gem is too old)
+
+## Requirements
+
+Needs wkhtmltopdf 0.11.0 rc1 installed (through nk-wkhtmltopdf gem)
+
+If pdf exported pages to be joined in a single document are not public, REST access must be enabled. Flag "Enable REST web service" in the Administration / Settings / Authentication page.
 
 ## License
 
