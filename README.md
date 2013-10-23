@@ -14,7 +14,14 @@ Should work on Redmine 2.0+.
 
 ## Requirements
 
-Needs wkhtmltopdf 0.11.0 rc1 installed (through nk-wkhtmltopdf gem)
+Needs wkhtmltopdf 0.11.0 rc1 installed (through nk-wkhtmltopdf gem).
+wkhtmltopdf needs Qt libraries. Please check that wkhtmltopdf works properly on the command line through a simple test over a simple html:
+
+<pre>
+wkhtmltopdf -q --no-outline &lt;file&gt;.html &lt;file&gt;.pdf
+</pre>
+
+Any issues regarding wkhtmltopdf can be addressed to https://github.com/robflynn/nk-wkhtmltopdf.
 
 If pdf exported pages to be joined in a single document are not public, REST access must be enabled. Flag "Enable REST web service" in the Administration / Settings / Authentication page.
 
