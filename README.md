@@ -9,7 +9,7 @@ This project is currently work in progress and I am planing an complete rewrite 
 ## Compatibility
 
 The plugin has been developed for Redmine Version 1.3.x and patched to work in Redmine 1.4.x to.
-Redmine 2.0 port is on redmine_2x_compatibility branch.
+Redmine 2.0 port is on master branch. Support for Redmine 1.x is discontinued.
 
 ## License
 
