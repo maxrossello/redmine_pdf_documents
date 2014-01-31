@@ -3,7 +3,6 @@
 # Based on file: en.yml
 
 zh:
-  pdf_menu_title : "WikiPdfExport"
   pdf_tab: "PDFs"
   pdf_internal_name: "Internal name"
   pdf_build_at: "Build at"

@@ -4,12 +4,26 @@
 
 This plugin creates pdf documents containing selected wiki pages.
 
-This project is currently work in progress and I am planing an complete rewrite after I've finished all the features I wan't to include.
+Redmine 2.x branch includes full rendering of macros, both in multiple-page documents and in wiki PDF exports.
+Supports wiki_external_filter (except for svg outputs) and all other plugins whose implemented macros generate html.
 
 ## Compatibility
 
-The plugin has been developed for Redmine Version 1.3.x and patched to work in Redmine 1.4.x to.
-Redmine 2.0 port is on redmine_2x_compatibility branch.
+Tested on Redmine 2.3.3, 2.4.2.
+Should work on Redmine 2.0+.
+
+## Requirements
+
+Needs wkhtmltopdf 0.11.0 rc1 installed (through nk-wkhtmltopdf gem).
+wkhtmltopdf needs Qt libraries. Please check that wkhtmltopdf works properly on the command line through a simple test over a simple html:
+
+<pre>
+wkhtmltopdf -q --no-outline &lt;file&gt;.html &lt;file&gt;.pdf
+</pre>
+
+Any issues regarding wkhtmltopdf can be addressed to https://github.com/robflynn/nk-wkhtmltopdf.
+
+If pdf exported pages to be joined in a single document are not public, REST access must be enabled. Flag "Enable REST web service" in the Administration / Settings / Authentication page.
 
 ## License
 
@@ -20,7 +34,7 @@ This script is published under the GPLv2 licence.
 I am using code and ideas from the following people:
 
 * Code to create PDF from wiki pages: http://www.redmine.org/issues/401
-* Idea and portions of code form: http://www.redmine.org/plugins/redmine_doc_pu
+* Idea and portions of code from: http://www.redmine.org/plugins/redmine_doc_pu
 
 ## Screenshots
 

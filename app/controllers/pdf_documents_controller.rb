@@ -1,7 +1,14 @@
+require 'open-uri'
+require_dependency 'pdf_document_helper'
+require 'prawn/outline'
+require 'prawn/templates'
+
 class PdfDocumentsController < ApplicationController
   unloadable
-
+  
   include Redmine::Export::PDF
+  include PdfDocumentHelper
+  include Prawn
 
 	layout "base"
 	menu_item :pdf_documents_menu
@@ -25,7 +32,7 @@ class PdfDocumentsController < ApplicationController
   
   def edit
     @document = PdfDocumentsDocument.find(params[:id])
-    if request.post?
+    if params.include?(:document)
       @document.build_at = Time.now
       if @document.update_attributes(params[:document])
         flash[:notice] = t(:pdf_message_document_saved)
@@ -45,36 +52,28 @@ class PdfDocumentsController < ApplicationController
   def generate
     @document = PdfDocumentsDocument.find(params[:id])
     wiki_pages = @document.pdf_documents_wiki_pages
-    pdf = ITCPDF.new(current_language)
-    pdf.SetTitle(@project.name)
-    pdf.alias_nb_pages
-    pdf.footer_date = format_date(Date.today) + " - " + @document.author
-    wiki_pages.each do |p|
-      page = p.wiki_page
-      pdf.AddPage
-      pdf.SetFontStyle('B',11)
-      pdf.RDMMultiCell(190,5, @document.title)
-      pdf.Ln
-      # Set resize image scale
-      pdf.SetImageScale(1.6)
-      pdf.SetFontStyle('',9)
-      pdf.RDMwriteHTMLCell(190,5,0,0, page.content.text.to_s, page.attachments, 0)
-      if page.attachments.any?
-        pdf.Ln
-        pdf.SetFontStyle('B',9)
-        pdf.RDMCell(190,5, l(:label_attachment_plural), "B")
-        pdf.Ln
-        for attachment in page.attachments
-          pdf.SetFontStyle('',8)
-          pdf.RDMCell(80,5, attachment.filename)
-          pdf.RDMCell(20,5, number_to_human_size(attachment.filesize),0,0,"R")
-          pdf.RDMCell(25,5, format_date(attachment.created_on),0,0,"R")
-          pdf.RDMCell(65,5, attachment.author.name,0,0,"R")
-          pdf.Ln
+
+    filename = Rails.root.join("tmp/pdf/_doc.pdf").to_s
+    append_filename = Rails.root.join("tmp/pdf/_append.pdf").to_s
+
+    Prawn::Document.generate(filename, :skip_page_creation => true, :template => open(pdf_open_url(@project,wiki_pages[0].wiki_page))) do |pdf|
+      wiki_pages.delete_at(0)
+      # pdf.footer_date = format_date(Date.today) + " - " + @document.author
+
+      wiki_pages.each do |p|
+        page = p.wiki_page
+        pdf.go_to_page(pdf.page_count)
+        append = Prawn::Document.new(:template => open(pdf_open_url(@project,page)))
+        append.render_file(append_filename)
+        (1..append.page_count).each do |template_page_number|
+          pdf.start_new_page(:template => append_filename, :template_page => template_page_number)
         end
       end
     end
-    send_data(pdf.Output, :type => 'application/pdf', :filename => "export.pdf")
+
+    # headers and footers
+
+    send_file(filename, :type => 'application/pdf', :filename => @document.name + ".pdf")
   end
 
 	private

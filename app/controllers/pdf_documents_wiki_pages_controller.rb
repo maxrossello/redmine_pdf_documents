@@ -22,7 +22,7 @@ class PdfDocumentsWikiPagesController < ApplicationController
 
   def edit
     @pdf_documents_wiki_page = PdfDocumentsWikiPage.find(params[:id])
-    if request.post?
+    if params.include?(:pdf_documents_wiki_page)    
       @pdf_documents_wiki_page.update_attributes(params[:pdf_documents_wiki_page])
       if @pdf_documents_wiki_page.save
         flash[:notice] = t(:pdf_message_page_saved)

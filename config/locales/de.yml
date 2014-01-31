@@ -1,6 +1,5 @@
 # German strings go here for Rails i18n
 de:
-  pdf_menu_title : "WikiPdfExport"
   pdf_tab: "PDFs"
   pdf_internal_name: "Interner Name"
   pdf_build_at: "Erstellt am"
