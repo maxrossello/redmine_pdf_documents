@@ -1,6 +1,7 @@
 require 'open-uri'
 require_dependency 'pdf_document_helper'
 require 'prawn/outline'
+require 'prawn/templates'
 
 class PdfDocumentsController < ApplicationController
   unloadable
@@ -55,9 +56,9 @@ class PdfDocumentsController < ApplicationController
     filename = Rails.root.join("tmp/pdf/_doc.pdf").to_s
     append_filename = Rails.root.join("tmp/pdf/_append.pdf").to_s
 
-    Prawn::Document.generate(filename, :template => open(pdf_open_url(@project,wiki_pages[0].wiki_page))) do |pdf|
+    Prawn::Document.generate(filename, :skip_page_creation => true, :template => open(pdf_open_url(@project,wiki_pages[0].wiki_page))) do |pdf|
       wiki_pages.delete_at(0)
-     # pdf.footer_date = format_date(Date.today) + " - " + @document.author
+      # pdf.footer_date = format_date(Date.today) + " - " + @document.author
 
       wiki_pages.each do |p|
         page = p.wiki_page
@@ -69,7 +70,7 @@ class PdfDocumentsController < ApplicationController
         end
       end
     end
-    
+
     # headers and footers
 
     send_file(filename, :type => 'application/pdf', :filename => @document.name + ".pdf")

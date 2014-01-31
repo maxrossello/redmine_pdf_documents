@@ -9,7 +9,7 @@ Redmine::Plugin.register :redmine_pdf_documents do
   name 'Redmine PDF Documents plugin'
   author 'Klaus Meyer, Massimo Rossello'
   description 'Create PDF documents from multiple wiki pages'
-  version '0.0.2'
+  version '0.0.3'
   url 'https://github.com/maxrossello/redmine_pdf_documents'
   author_url 'http://www.klaus-meyer.net'
 

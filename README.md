@@ -9,7 +9,7 @@ Supports wiki_external_filter (except for svg outputs) and all other plugins who
 
 ## Compatibility
 
-Tested on Redmine 2.3.
+Tested on Redmine 2.3.3, 2.4.2.
 Should work on Redmine 2.0+.
 Needs wkhtmltopdf 0.11.0 rc1 installed (wkhtmltopdf-binary gem is too old)
 
