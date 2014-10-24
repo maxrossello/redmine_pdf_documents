@@ -25,6 +25,15 @@ Any issues regarding wkhtmltopdf can be addressed to https://github.com/robflynn
 
 If pdf exported pages to be joined in a single document are not public, REST access must be enabled. Flag "Enable REST web service" in the Administration / Settings / Authentication page.
 
+## Installation
+
+Follow standard Redmine plugin process for dependency gems installation and database migration:
+
+<pre>
+bundle install
+rake redmine:plugins:migrate RAILS_ENV=production
+</pre>
+
 ## License
 
 This script is published under the GPLv2 licence.
